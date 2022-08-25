@@ -9,8 +9,10 @@ Rails.application.routes.draw do
 
   resources :lists, only: %i[show index new create] do # add show index new create
     # nested routes for bookmarks
-    resources :bookmarks, only: %i[new create] # add new create
+    resources :bookmarks, only: %i[index new create] # add new create
   end
+
+  resources :bookmarks, only: %i[show destroy]
 end
 
 # root to: 'tasks#index'
