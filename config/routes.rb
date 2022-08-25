@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     # nested routes for bookmarks
   end
 
-  resources :lists, only: %i[show index] do # add show index new create
+  resources :lists, only: %i[show index new create] do # add show index new create
     # nested routes for bookmarks
     # resources :bookmarks, only: %i[new create] # add new create
   end
