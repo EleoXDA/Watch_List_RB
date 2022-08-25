@@ -1,0 +1,9 @@
+<h1>Bookmarks</h1>
+
+<ul>
+  <% Bookmark.all.each do |bookmark| %>
+    <li><%= bookmark.id %>
+        <%= bookmark.comment %>
+        <%= bookmark.comment %></li>
+  <% end %>
+</ul>
