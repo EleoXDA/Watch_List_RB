@@ -1,0 +1,10 @@
+<%# DISPLAY A FORM TO CREATE NEW BOOKMARK %>
+<h1>Bookmark for <%= @list.name %></h1>
+<%# order of [@restaurant, @review] matters %>
+<%# These are used to create the action POST "/restaurants/:restaurant_id/reviews" %>
+<%= simple_form_for  [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.button :submit %>
+<% end %>
+<%= link_to "Back to Lists", lists_path(@list) %>
