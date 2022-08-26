@@ -1,11 +1,30 @@
-<h1>Movies</h1>
-
-<ul>
-  <% Movie.all.each do |movie| %>
-    <li><%= movie.title %>
-        <%= movie.overview %>
-        <%= movie.rating %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'Go to Lists', lists_path(@list) %>
+<div class="navbar sticky-top navbar-light bg-white border-bottom mx-5 d-flex justify-content-center">
+  <h1>Movies</h1>
+</div>
+<div class=" container d-flex align-items-center">
+  <a>
+    <%= link_to 'Go to Lists', lists_path(@list) %>
+  </a>
+</div>
+<div class="container d-flex justify-content-evenly m-5">
+  <div class="container row align-items-center justify-content-center col-6 d-flex flex-wrap">
+    <ol>
+      <% Movie.all.each do |movie| %>
+        <div class="card">
+          <li>
+            <div class="row d-flex m-1">
+              <div>
+                <div class="col-6"><%= movie.title %></div>
+                <div>Overview: <%= movie.overview %></div>
+                <div>Rating:<%= movie.rating %>/10</div>
+              </div>
+              <div class="col-6">
+                <img src="<%= movie.poster_url %>" width=300 px;>
+              </div>
+            </div>
+          </li>
+        </div>
+      <% end %>
+    </ol>
+  </div>
+</div>
