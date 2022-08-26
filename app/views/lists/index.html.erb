@@ -1,7 +1,30 @@
-<h1>Lists</h1>
-
-<ul>
-  <% List.all.each do |list| %>
-    <li><%= list.name %></li>
-  <% end %>
-</ul>
+<div class="navbar sticky-top navbar-light bg-white border-bottom mx-5 d-flex justify-content-center">
+  <h1>Lists</h1>
+</div>
+<div class=" container d-flex align-items-center">
+  <a>
+    <%= link_to "New List", new_list_path %>
+  </a>
+</div>
+<div class="container d-flex align-items-center">
+  <a>
+    <%# <%= link_to 'Back to Movies', movie_path(@movies) %> %>
+  </a>
+</div>
+<div class="container d-flex justify-content-evenly m-5">
+  <div class="container row align-items-center justify-content-center col-6 d-flex flex-wrap">
+    <ol>
+      <% List.all.each do |list| %>
+        <div class="card">
+          <li>
+            <div class="row d-flex m-1">
+              <div>
+                <div class="col-6"><%= list.name %></div>
+              </div>
+            </div>
+          </li>
+        </div>
+      <% end %>
+    </ol>
+  </div>
+</div>
