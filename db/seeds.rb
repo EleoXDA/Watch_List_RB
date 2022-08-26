@@ -10,8 +10,9 @@ Movie.destroy_all
 
 puts 'Creating movies...'
 20.times do
-  movie = Movie.create!(title: Faker::Movie.unique.title, overview: Faker::Quote.unique.famous_last_words,
-                        poster_url: 'https://i0.wp.com/sureshfruite.com/wp-content/uploads/woocommerce-placeholder.png',
+  moviename = Faker::Movie.unique.title
+  movie = Movie.create!(title: moviename, overview: Faker::Quote.unique.famous_last_words,
+                        poster_url: "https://source.unsplash.com/random/1920x1080/?#{moviename}",
                         rating: rand(0..10))
   puts movie.id.to_s
 end
