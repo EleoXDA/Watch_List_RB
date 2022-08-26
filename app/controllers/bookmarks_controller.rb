@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
   def index
-    @bookmark = Bookmark.all
+    @bookmarks = Bookmark.all
   end
 
   def show
@@ -17,6 +17,7 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
+    # raise
     if @bookmark.save
       redirect_to list_path(@list)
     else
@@ -27,7 +28,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    redirect_to bookmarks_path, status: :see_other
+    redirect_to bookmarks_path(@bookmark), status: :see_other
   end
 
   private
