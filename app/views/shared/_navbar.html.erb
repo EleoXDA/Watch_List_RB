@@ -1,0 +1,19 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon px-3">
+  <%= link_to root_path do %>
+    <%= image_tag "popcorn.png", alt: "alttext", class: "logo" %>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item active">
+        <%= link_to "My lists", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "New list", new_list_path, class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
+</div>
